@@ -1,0 +1,29 @@
+# 개인 데이터 파일
+*.xlsx
+*.xls
+data/
+매핑요청.xlsx
+
+# Python 관련
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+venv/
+env/
+.env
+
+# 개발 중인 파일들
+new_mapping_gui.py
+smart_mapping_gui.py
+kakao_gui.py
+ru_search_app.py
+ru_search_mobile.py
+new_mapping1_gui.py
+adress-converter.html
+
+# 기타
+.DS_Store
+Thumbs.db
+*.log 
