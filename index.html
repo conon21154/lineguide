@@ -63,12 +63,16 @@
             width: 32px;
             height: 32px;
             border-radius: 6px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            border: 2px solid rgba(255,255,255,0.8);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
             transition: transform 0.2s ease;
+            background: rgba(255,255,255,0.1);
         }
 
         .pwa-header h1 img:hover {
             transform: scale(1.1);
+            border-color: rgba(255,255,255,1);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.4);
         }
 
         .container {
@@ -1041,8 +1045,6 @@
             document.getElementById('results').innerHTML = `
                 <div class="no-results">
                     <div class="no-results-icon">🔍</div>
-                    <h3>검색어를 입력하세요</h3>
-                    <p>성능 최적화를 위해 검색어 입력 시 결과를 표시합니다</p>
                 </div>
             `;
             document.getElementById('resultsInfo').style.display = 'none';
