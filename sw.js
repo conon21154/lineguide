@@ -1,7 +1,7 @@
 // 서비스 워커 버전 (업데이트 시 변경)
-const CACHE_NAME = 'circuit-search-v1.0.0';
-const STATIC_CACHE_NAME = 'circuit-static-v1.0.0';
-const DYNAMIC_CACHE_NAME = 'circuit-dynamic-v1.0.0';
+const CACHE_NAME = 'circuit-search-v1.0.1';
+const STATIC_CACHE_NAME = 'circuit-static-v1.0.1';
+const DYNAMIC_CACHE_NAME = 'circuit-dynamic-v1.0.1';
 
 // 캐시할 정적 파일들
 const STATIC_FILES = [

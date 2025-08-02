@@ -1280,15 +1280,26 @@
             displayResults(true);
         }
 
-        // PWA 서비스 워커 등록
+        // PWA 서비스 워커 등록 (개선된 버전)
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
-                navigator.serviceWorker.register('sw.js')
+                navigator.serviceWorker.register('sw.js', { scope: '/' })
                     .then(registration => {
-                        console.log('SW registered: ', registration);
+                        console.log('SW registered successfully: ', registration);
+                        
+                        // 업데이트 확인
+                        registration.addEventListener('updatefound', () => {
+                            const newWorker = registration.installing;
+                            newWorker.addEventListener('statechange', () => {
+                                if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                                    // 새 버전이 설치되었을 때 사용자에게 알림
+                                    console.log('새 버전이 설치되었습니다. 새로고침하세요.');
+                                }
+                            });
+                        });
                     })
                     .catch(registrationError => {
-                        console.log('SW registration failed: ', registrationError);
+                        console.error('SW registration failed: ', registrationError);
                     });
             });
         }

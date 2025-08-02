@@ -1,7 +1,7 @@
 {
   "name": "LineGuide - 회선 정보 검색",
   "short_name": "LineGuide",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "KT 통신장비 회선 정보 검색 및 관리 시스템입니다",
   "start_url": "/",
   "display": "standalone",
