@@ -791,15 +791,12 @@
             return strValue;
         }
 
-        // 디버그 정보 표시 함수 (모바일에서도 표시)
+        // 디버그 정보 표시 함수 (개발 모드에서만 표시)
         function showDebugInfo(message) {
-            const debugInfo = document.getElementById('debugInfo');
-            const debugContent = document.getElementById('debugContent');
-            debugContent.innerHTML += `<div>${new Date().toLocaleTimeString()}: ${message}</div>`;
-            debugInfo.style.display = 'block';
-            
-            // 모바일에서 스크롤을 맨 아래로
-            debugContent.scrollTop = debugContent.scrollHeight;
+            // 개발 모드에서만 콘솔에 출력 (화면에는 표시하지 않음)
+            if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+                console.log(message);
+            }
         }
 
         // 모달 관련 함수들
