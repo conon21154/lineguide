@@ -59,6 +59,18 @@
             margin: 0;
         }
 
+        .pwa-header h1 img {
+            width: 32px;
+            height: 32px;
+            border-radius: 6px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            transition: transform 0.2s ease;
+        }
+
+        .pwa-header h1 img:hover {
+            transform: scale(1.1);
+        }
+
         .container {
             max-width: 100%;
             margin: 70px 0 0 0; /* 헤더 높이만큼 마진 */
@@ -679,7 +691,7 @@
 <body>
     <!-- PWA 헤더 -->
     <div class="pwa-header">
-        <h1><img src="icon-32.png" alt="LineGuide" style="width: 24px; height: 24px; margin-right: 8px; vertical-align: middle;"> LineGuide</h1>
+        <h1><img src="icon-512.png" alt="LineGuide"> LineGuide</h1>
     </div>
 
     <!-- 설치 배너 -->

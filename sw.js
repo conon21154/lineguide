@@ -1,16 +1,16 @@
 // 서비스 워커 버전 (업데이트 시 변경)
-const CACHE_NAME = 'circuit-search-v1.0.3';
-const STATIC_CACHE_NAME = 'circuit-static-v1.0.3';
-const DYNAMIC_CACHE_NAME = 'circuit-dynamic-v1.0.3';
+const CACHE_NAME = 'circuit-search-v1.0.4';
+const STATIC_CACHE_NAME = 'circuit-static-v1.0.4';
+const DYNAMIC_CACHE_NAME = 'circuit-dynamic-v1.0.4';
 
 // 캐시할 정적 파일들
 const STATIC_FILES = [
-  '/lineguide/',
-  '/lineguide/index.html',
-  '/lineguide/manifest.json',
+  './',
+  './index.html',
+  './manifest.json',
   'https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js',
-  '/lineguide/icon-192.png',
-  '/lineguide/icon-512.png'
+  './icon-192.png',
+  './icon-512.png'
 ];
 
 // 서비스 워커 설치
@@ -153,11 +153,11 @@ self.addEventListener('push', event => {
   
   if (event.data) {
     const data = event.data.json();
-    const options = {
-      body: data.body || '새로운 회선 데이터가 업데이트되었습니다',
-      icon: '/icon-192.png',
-      badge: '/icon-72.png',
-      tag: 'circuit-update',
+         const options = {
+       body: data.body || '새로운 회선 데이터가 업데이트되었습니다',
+       icon: './icon-192.png',
+       badge: './icon-72.png',
+       tag: 'circuit-update',
       requireInteraction: true,
       actions: [
         {
@@ -186,11 +186,11 @@ self.addEventListener('notificationclick', event => {
   
   event.notification.close();
   
-  if (event.action === 'open') {
-    event.waitUntil(
-      clients.openWindow('/')
-    );
-  }
+     if (event.action === 'open') {
+     event.waitUntil(
+       clients.openWindow('./')
+     );
+   }
 });
 
 // 데이터 동기화 함수
