@@ -684,7 +684,7 @@
 
     <!-- 설치 배너 -->
     <div class="install-banner" id="installBanner">
-        📱 홈 화면에 앱 추가하기 - 탭하여 설치
+        📱 LineGuide 앱 설치하기 - 홈 화면에 추가
     </div>
 
     <!-- 온라인/오프라인 상태 -->
@@ -856,22 +856,41 @@
             modal.classList.remove('show');
         }
 
-        // PWA 설치 기능
+        // PWA 설치 기능 (개선된 버전)
+        
         window.addEventListener('beforeinstallprompt', (e) => {
             e.preventDefault();
             deferredPrompt = e;
-            document.getElementById('installBanner').classList.add('show');
+            
+            // 설치 배너 표시
+            const installBanner = document.getElementById('installBanner');
+            installBanner.classList.add('show');
+            
+            // 5초 후 자동으로 숨기기
+            setTimeout(() => {
+                installBanner.classList.remove('show');
+            }, 10000);
         });
 
+        // 설치 배너 클릭 이벤트
         document.getElementById('installBanner').addEventListener('click', async () => {
             if (deferredPrompt) {
                 deferredPrompt.prompt();
                 const { outcome } = await deferredPrompt.userChoice;
                 if (outcome === 'accepted') {
+                    console.log('LineGuide 앱이 성공적으로 설치되었습니다!');
                     document.getElementById('installBanner').classList.remove('show');
+                } else {
+                    console.log('LineGuide 앱 설치가 취소되었습니다.');
                 }
                 deferredPrompt = null;
             }
+        });
+
+        // 앱 설치 완료 감지
+        window.addEventListener('appinstalled', (evt) => {
+            console.log('LineGuide 앱이 홈 화면에 설치되었습니다!');
+            document.getElementById('installBanner').classList.remove('show');
         });
 
         // 온라인/오프라인 상태 감지
