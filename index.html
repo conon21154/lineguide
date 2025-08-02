@@ -42,7 +42,7 @@
             left: 0;
             right: 0;
             z-index: 1000;
-            background: #1976d2;
+            background: #4CAF50;
             padding: 16px 20px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
@@ -63,16 +63,16 @@
             width: 32px;
             height: 32px;
             border-radius: 6px;
-            border: 2px solid rgba(255,255,255,0.8);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+            border: 2px solid rgba(255,255,255,0.9);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
             transition: transform 0.2s ease;
-            background: rgba(255,255,255,0.1);
+            background: rgba(255,255,255,0.15);
         }
 
         .pwa-header h1 img:hover {
             transform: scale(1.1);
             border-color: rgba(255,255,255,1);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
         }
 
         .container {
@@ -84,7 +84,7 @@
         }
 
         .install-banner {
-            background: #4caf50;
+            background: #2E7D32;
             color: white;
             padding: 16px 20px;
             text-align: center;
@@ -95,7 +95,7 @@
         }
 
         .install-banner:hover {
-            background: #45a049;
+            background: #1B5E20;
         }
 
         .install-banner.show {
@@ -103,7 +103,7 @@
         }
 
         .status-bar {
-            background: #1976d2;
+            background: #4CAF50;
             padding: 12px 20px;
             color: white;
             text-align: center;
@@ -1044,7 +1044,6 @@
         function showSearchGuide() {
             document.getElementById('results').innerHTML = `
                 <div class="no-results">
-                    <div class="no-results-icon">🔍</div>
                 </div>
             `;
             document.getElementById('resultsInfo').style.display = 'none';
