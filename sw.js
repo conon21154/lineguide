@@ -1,16 +1,16 @@
 // 서비스 워커 버전 (업데이트 시 변경)
-const CACHE_NAME = 'circuit-search-v1.0.1';
-const STATIC_CACHE_NAME = 'circuit-static-v1.0.1';
-const DYNAMIC_CACHE_NAME = 'circuit-dynamic-v1.0.1';
+const CACHE_NAME = 'circuit-search-v1.0.3';
+const STATIC_CACHE_NAME = 'circuit-static-v1.0.3';
+const DYNAMIC_CACHE_NAME = 'circuit-dynamic-v1.0.3';
 
 // 캐시할 정적 파일들
 const STATIC_FILES = [
-  '/',
-  '/index.html',
-  '/manifest.json',
+  '/lineguide/',
+  '/lineguide/index.html',
+  '/lineguide/manifest.json',
   'https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js',
-  '/icon-192.png',
-  '/icon-512.png'
+  '/lineguide/icon-192.png',
+  '/lineguide/icon-512.png'
 ];
 
 // 서비스 워커 설치
